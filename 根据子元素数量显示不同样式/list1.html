@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+          padding: 0 10px 0 0;
+          margin: 0 auto;
+          width: 232px;
+        }
+        ul:after {
+            content: '';
+            display: table;
+            clear:both;
+        }
+        ul>li {
+            list-style: none;
+            float: left;
+            padding: 0;
+            height: 80px;
+            background: #f00;
+            font-size: 30px;
+            font-weight: 700;
+            color: #000;
+            text-align: center;
+            line-height: 80px;
+        }
+        
+        /* 只有一个li元素 */
+        ul>li:only-child {
+            width: 180px;
+            margin: 10px 25px;
+        }
+
+        /* 有两个li元素 */
+        ul>li:first-child:nth-last-child(2),
+        ul>li:first-child:nth-last-child(2) ~ li {
+            width: 100px;
+            margin: 10px 0 10px 10px;
+        }
+
+        /* 有三个li元素的第1个元素 */
+        ul>li:first-child:nth-last-child(3) {
+            width: 180px;
+            margin: 10px 25px;
+        }
+
+        /* 有三个li元素的第2个及以后元素 */
+        ul>li:nth-child(2):nth-last-child(2),
+        ul>li:nth-child(2):nth-last-child(2) ~ li {
+            width: 100px;
+            margin: 10px 0 10px 10px;
+        }
+
+        /* 有四个及四个以上的li元素 */
+        ul>li:first-child:nth-last-child(n+4),
+        ul>li:first-child:nth-last-child(n+4) ~ li {
+            width: 100px;
+            margin: 10px 0 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <a href="https://juejin.im/post/5c4372186fb9a049c232bbdd" target="_blank">根据子元素数量显示不同样式-纯css解决方案</a>
+</body>
+</html>
